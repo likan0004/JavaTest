@@ -35,9 +35,9 @@ public class CuentaCorriente extends Cuenta{
     
     public boolean isSobregiro(){
         if (this.SobregiroTotal-this.Sobregiro != 0) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
     
     /**

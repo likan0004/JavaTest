@@ -49,16 +49,23 @@ public class Banco {
         return this.cuentasCorriente;
     }
     
-    public void DepositarCuentaAhorro(int NumCuenta, double SaldoDeposito){
+    public void DepositarCuenta(int NumCuenta, double SaldoDeposito){
 
         Cuenta CuentaDeposito = SearchCuenta(NumCuenta);
         CuentaDeposito.DepositarSaldo(SaldoDeposito);
         
     }
     
+    public void RetirarCuenta(int NumCuenta, double SaldoRetirar){
+        Cuenta CuentaRetiro = SearchCuenta(NumCuenta);
+        CuentaRetiro.RetirarSaldo(SaldoRetirar); 
+        
+    }
+    
     public Cuenta SearchCuenta(int NumCuenta){
         CuentaAhorro SCuentaA = SearchCuentaAhorro(NumCuenta);
         CuentaCorriente SCuentaC = SearchCuentaCorriente(NumCuenta);
+        
         if (SCuentaA != null) {
             return SCuentaA;
         }
@@ -72,9 +79,9 @@ public class Banco {
     public CuentaAhorro SearchCuentaAhorro(int NumCuenta){
         for (int i = 0; i < this.maxCuentasAhorro; i++) {
             if(this.cuentasAhorro[i] != null)
-            if (this.cuentasAhorro[i].getNumeroCuenta() == NumCuenta) {
-                return this.cuentasAhorro[i];
-            }
+                if (this.cuentasAhorro[i].getNumeroCuenta() == NumCuenta) {
+                    return this.cuentasAhorro[i];
+                }
         }
         return null;
     }
