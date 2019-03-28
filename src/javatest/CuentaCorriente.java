@@ -25,11 +25,11 @@ public class CuentaCorriente extends Cuenta{
     public void retirar(double Retiro){
         double SaldoRetirar=this.getBalance()-Retiro;
         if (Retiro>0 && Retiro<this.getBalance()){
-            this.retirar(Retiro);
+            super.retirar(Retiro);
         }
         else if(SaldoRetirar<0){
-            this.retirar(Retiro+SaldoRetirar);
-            Sobregiro=Sobregiro+SaldoRetirar;
+            super.retirar(Retiro+SaldoRetirar);
+            
         } 
     }
 }

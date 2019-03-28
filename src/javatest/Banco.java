@@ -61,7 +61,7 @@ public class Banco {
     }
     
     public void RetirarCuenta(int NumCuenta, double SaldoRetirar){
-        System.out.println("hola mundo");
+      
         Cuenta CuentaRetiro = SearchCuenta(NumCuenta);
         if(CuentaRetiro!=null){
         CuentaRetiro.retirar(SaldoRetirar);}
